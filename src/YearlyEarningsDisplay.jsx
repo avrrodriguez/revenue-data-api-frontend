@@ -3,19 +3,11 @@ import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 
 export function GraphDisplay(props) {
-  console.log(props.yearlyDepartmentEarnings);
+  // console.log(props.yearlyDepartmentEarnings);
 
   useEffect(() => {
     console.log(props.yearlyDepartmentEarnings.length);
   }, [props.yearlyDepartmentEarnings]);
-
-  const options = {
-    responsive: true,
-    legend: {
-      display: false,
-    },
-    type: "bar",
-  };
 
   var earningsData = (department) =>
     props.yearlyDepartmentEarnings
@@ -62,7 +54,7 @@ export function GraphDisplay(props) {
 
   if (props.yearlyDepartmentEarnings.length > 0) {
     for (const i in departments) {
-      console.log(i);
+      // console.log(i);
       dataDisplay.push({
         label: departments[i],
         backgroundColor: "rgba(255,99,132,0.2)",
@@ -75,9 +67,17 @@ export function GraphDisplay(props) {
     }
   }
 
-  console.log("departments", departments);
-  console.log("hello", earningsData("Police"));
-  console.log("dataDisplay", dataDisplay);
+  // console.log("departments", departments);
+  // console.log("hello", earningsData("Police"));
+  // console.log("dataDisplay", dataDisplay);
+
+  const options = {
+    responsive: true,
+    legend: {
+      display: false,
+    },
+    type: "bar",
+  };
 
   const data = {
     labels: ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "1013", "2014", "2015", "2016", "2017", "2018"],
