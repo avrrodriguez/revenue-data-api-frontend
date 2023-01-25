@@ -1,12 +1,12 @@
 import { RevenueIndex } from "./RevenueIndex";
-import { DepartmentOrganizationEarnigns } from "./DepartmentOrganizationEarnings";
+import { DepartmentOrganizationEarnings } from "./DepartmentOrganizationEarnings";
 
 export function Home() {
   return (
     <div>
-      <h1>Welcome to React!</h1>
+      <h1>Miami Revenue API</h1>
       <RevenueIndex />
-      <DepartmentOrganizationEarnigns />
+      <DepartmentOrganizationEarnings />
     </div>
   );
 }

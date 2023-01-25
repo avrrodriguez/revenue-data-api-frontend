@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Bar } from "recharts";
 import { Chart } from "chart.js/auto";
 
-export function DepartmentOrganizationEarnigns() {
+export function DepartmentOrganizationEarnings() {
   const [departmentOrganizationEarnings, setDepartmentOrganizationEarnings] = useState([]);
   const [department, setDepartment] = useState("");
 
@@ -44,7 +44,7 @@ export function DepartmentOrganizationEarnigns() {
       borderWidth: 1,
       hoverBackgroundColor: "rgba(255,99,132,0.4)",
       hoverBorderColor: "rgba(255,99,132,1)",
-      data: earningsData,
+      data: [12, 45, 23, 46, 78, 45],
     },
   };
 
@@ -52,9 +52,10 @@ export function DepartmentOrganizationEarnigns() {
 
   return (
     <div>
+      <h2>Department Organization Earnings</h2>
       {department.length > 0 ? (
         <>
-          <h2>Organization Earnings for department: {department}</h2>
+          <h3>Organization Earnings for department: {department}</h3>
         </>
       ) : (
         <>
