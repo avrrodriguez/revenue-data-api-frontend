@@ -16,7 +16,7 @@ export function RevenueIndex() {
 
   return (
     <div>
-      <div>Yearly Department Earnings</div>
+      <h2>Yearly Department Earnings</h2>
       <GraphDisplay yearlyDepartmentEarnings={yearlyDepartmentEarnings} />
     </div>
   );
