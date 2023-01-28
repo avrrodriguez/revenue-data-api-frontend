@@ -59,7 +59,7 @@ export function DepartmentOrganizationEarnings() {
     ],
   };
 
-  // console.log(departmentOrganizationEarnings.length);
+  console.log(departmentOrganizationEarnings.length);
 
   return (
     <div>
