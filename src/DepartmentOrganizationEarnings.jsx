@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Bar } from "recharts";
+import { Bar } from "react-chartjs-2";
 import { Chart } from "chart.js/auto";
 import ModCheck from "./assets/emote-mod-check.gif";
 
@@ -55,7 +55,7 @@ export function DepartmentOrganizationEarnings() {
         borderWidth: 1,
         hoverBackgroundColor: "rgba(255,99,132,0.4)",
         hoverBorderColor: "rgba(255,99,132,1)",
-        data: [12, 45, 23, 46, 78, 45, 23, 26, 36, 64, 1, 3, 12],
+        data: [12, 43, 23, 57, 78, 34, 23, 23, 36, 13, 7, 4, 15],
       },
     ],
   };

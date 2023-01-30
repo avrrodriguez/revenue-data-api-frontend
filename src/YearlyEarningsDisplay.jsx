@@ -67,9 +67,9 @@ export function GraphDisplay(props) {
     }
   }
 
-  console.log("departments", departments);
-  console.log("hello", earningsData("Police"));
-  console.log("dataDisplay", dataDisplay);
+  // console.log("departments", departments);
+  // console.log("hello", earningsData("Police"));
+  // console.log("dataDisplay", dataDisplay);
 
   const options = {
     responsive: true,
