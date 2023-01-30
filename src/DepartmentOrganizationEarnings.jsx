@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Bar } from "recharts";
 import { Chart } from "chart.js/auto";
+import ModCheck from "./assets/emote-mod-check.gif";
 
 export function DepartmentOrganizationEarnings() {
   const [departmentOrganizationEarnings, setDepartmentOrganizationEarnings] = useState([]);
@@ -88,7 +89,7 @@ export function DepartmentOrganizationEarnings() {
           </>
         ) : (
           <>
-            <h2>Loading...</h2>
+            <img src={ModCheck} />
           </>
         )}
       </div>
