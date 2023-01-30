@@ -3,8 +3,6 @@ import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 
 export function GraphDisplay(props) {
-  // console.log(props.yearlyDepartmentEarnings);
-
   useEffect(() => {
     console.log(props.yearlyDepartmentEarnings.length);
   }, [props.yearlyDepartmentEarnings]);
@@ -26,35 +24,10 @@ export function GraphDisplay(props) {
     }
   }
 
-  var rgbs = [
-    "128,0,0",
-    "255,0,0",
-    "0,255,0",
-    "0,0,255",
-    "255,255,0",
-    "0,255,255",
-    "255,0,255",
-    "192,192,192",
-    "128,128,128",
-    "128,0,0",
-    "128,128,0",
-    "0,128,0",
-    "128,0,128",
-    "0,128,128",
-    "0,0,128",
-    "139,0,0",
-    "165,42,42",
-    "178,34,34",
-    "220,20,60",
-    "255,99,71",
-    "255,127,80",
-  ];
-
   var dataDisplay = [];
 
   if (props.yearlyDepartmentEarnings.length > 0) {
     for (const i in departments) {
-      // console.log(i);
       dataDisplay.push({
         label: departments[i],
         backgroundColor: "rgba(255,99,132,0.2)",
@@ -66,10 +39,6 @@ export function GraphDisplay(props) {
       });
     }
   }
-
-  // console.log("departments", departments);
-  // console.log("hello", earningsData("Police"));
-  // console.log("dataDisplay", dataDisplay);
 
   const options = {
     responsive: true,

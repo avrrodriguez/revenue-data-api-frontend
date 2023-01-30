@@ -21,12 +21,42 @@ export function DepartmentOrganizationEarnings() {
     event.preventDefault();
     const params = new FormData(event.target);
     setDepartment(params.values().next().value);
-    console.log(department);
     handleOrganizationEarnings(department);
     event.target.reset();
   };
 
-  var earningsData = [];
+  var organizationEarningsData = [];
+  var organizations = [];
+
+  if (departmentOrganizationEarnings.length > 0) {
+    for (let i = 0; i < departmentOrganizationEarnings.length; i++) {
+      if (organizations.includes(departmentOrganizationEarnings[i]["organization_description"]) === false) {
+        organizations.push(departmentOrganizationEarnings[i]["organization_description"]);
+      }
+    }
+    // console.log(organizations);
+  }
+
+  var earningsData = (department) =>
+    departmentOrganizationEarnings
+      .filter((earning) => earning["organization_description"] === `${department}`)
+      .map((earning) => {
+        return earning["total_organization_revenue"];
+      });
+
+  if (departmentOrganizationEarnings.length > 0) {
+    for (const i in organizations) {
+      organizationEarningsData.push({
+        label: organizations[i],
+        backgroundColor: "rgba(255,99,132,0.2)",
+        borderColor: "rgba(255,99,132,1)",
+        borderWidth: 1,
+        hoverBackgroundColor: "rgba(255,99,132,0.4)",
+        hoverBorderColor: "rgba(255,99,132,1)",
+        data: earningsData(organizations[i]),
+      });
+    }
+  }
 
   const options = {
     responsive: true,
@@ -38,29 +68,8 @@ export function DepartmentOrganizationEarnings() {
 
   const data = {
     labels: ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "1013", "2014", "2015", "2016", "2017", "2018"],
-    datasets: [
-      {
-        label: "Police",
-        backgroundColor: "rgba(255,99,132,0.2)",
-        borderColor: "rgba(255,99,132,1)",
-        borderWidth: 1,
-        hoverBackgroundColor: "rgba(255,99,132,0.4)",
-        hoverBorderColor: "rgba(255,99,132,1)",
-        data: [12, 45, 23, 46, 78, 45, 23, 26, 36, 64, 1, 3, 12],
-      },
-      {
-        label: "Lolol",
-        backgroundColor: "rgba(255,99,132,0.2)",
-        borderColor: "rgba(255,99,132,1)",
-        borderWidth: 1,
-        hoverBackgroundColor: "rgba(255,99,132,0.4)",
-        hoverBorderColor: "rgba(255,99,132,1)",
-        data: [12, 43, 23, 57, 78, 34, 23, 23, 36, 13, 7, 4, 15],
-      },
-    ],
+    datasets: organizationEarningsData,
   };
-
-  console.log(departmentOrganizationEarnings.length);
 
   return (
     <div>
